@@ -1,5 +1,9 @@
 
-##Variables with assigned data
+## load package "dplyr"
+
+## create file directories for data 
+
+## Variables with assigned data
 
 features <- features.txt (561 rows, 2 columns)
 The features selected.
@@ -18,7 +22,7 @@ contains recorded features train data
 y_train <- test/y_train.txt (7352 rows, 1 column)
 contains train data of activities’code labels
 
-##Merge training and test sets to create one data set
+## Merge training and test sets to create one data set
 
 x_bind(10299 rows, 561 columns) is x_train and x_test merged
 y_bind(10299 rows, 1 column) is y_train and y_test merged
@@ -26,12 +30,12 @@ subject(10299 rows, 1 column) is subject_train and subject_test merged
 Merged (10299 rows, 563 column) is Subject, Y and X merged
 
 
-##Extract only the measurements on the mean and standard deviation for each measurement
+## Extract only the measurements on the mean and standard deviation for each measurement
 
 TidyData (10299 rows, 88 columns) selecting only columns from Merged_Data: subject, code and the measurements on the mean and standard deviation (std) for each measurement
 
 
-##Use descriptive activity names to name the activities in the data set
+## Use descriptive activity names to name the activities in the data set
 
 Entire numbers in code column of the TidyData replaced with corresponding activity taken from second column of the activities variable
 
@@ -46,7 +50,7 @@ All start with character f in column’s name replaced by Frequency
 All start with character t in column’s name replaced by Time
 
 
-##From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
+## From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
 
 FinalData (180 rows, 88 columns): sumarizing TidyData taking the means of each variable for each activity and each subject, grouped by subject and activity.
 Export FinalData into FinalData.txt file.
