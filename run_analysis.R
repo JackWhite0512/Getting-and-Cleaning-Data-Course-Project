@@ -1,14 +1,19 @@
 
+library(dplyr)
+
+file_dir = "UCI HAR DATASET/"
+train_dir = paste0(file_dir, "train/")
+test_dir = paste0(file_dir, "test/")
 
 
-features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","functions"))
-activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("code", "activity"))
-subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
-x_test <- read.table("UCI HAR Dataset/test/X_test.txt", col.names = features$functions)
-y_test <- read.table("UCI HAR Dataset/test/y_test.txt", col.names = "code")
-subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt", col.names = "subject")
-x_train <- read.table("UCI HAR Dataset/train/X_train.txt", col.names = features$functions)
-y_train <- read.table("UCI HAR Dataset/train/y_train.txt", col.names = "code")
+features <- read.table(paste0(file_dir,"features.txt"), col.names = c("n","functions"))
+activity_labels <- read.table(paste0(file_dir,"activity_labels.txt"), col.names = c("code", "activity"))
+subject_test <- read.table(paste0(test_dir, "subject_test.txt"), col.names = "subject")
+x_test <- read.table(paste0(test_dir, "X_test.txt"), col.names = features$functions)
+y_test <- read.table(paste0(test_dir, "y_test.txt"), col.names = "code")
+subject_train <- read.table(paste0(train_dir, "subject_train.txt"), col.names = "subject")
+x_train <- read.table(paste0(train_dir, "X_train.txt"), col.names = features$functions)
+y_train <- read.table(paste0(train_dir, "y_train.txt"), col.names = "code")
 
 
 x_bind <- rbind(x_train, x_test)
