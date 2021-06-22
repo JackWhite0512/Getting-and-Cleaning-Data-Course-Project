@@ -1,4 +1,9 @@
 # Getting-and-Cleaning-Data-Course-Project
+
+## Author: Kieso jan
+
+## DataSet Zip File DownLoad Location: FUCI HAR Dataset
+
 ## Files
 
 CodeBook.md: describes the variables, the data, and any transformations or work performed to clean up the data
